@@ -1,0 +1,534 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #eee4cf;
+  color: #493b27;
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+/* =========================
+   MAIN INVITATION
+========================= */
+
+.invitation {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 255, 255, 0.95),
+      transparent 45%
+    ),
+    linear-gradient(
+      145deg,
+      #f8f2e5 0%,
+      #fffaf0 45%,
+      #eee2c9 100%
+    );
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  text-align: center;
+  padding: 55px 25px 35px;
+  position: relative;
+}
+
+.hero-decoration {
+  color: #b18a42;
+  font-size: 18px;
+  margin-bottom: 18px;
+}
+
+.small-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 4px;
+  color: #92723a;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(3.2rem, 10vw, 5.8rem);
+  line-height: 0.8;
+  font-weight: 500;
+  font-style: italic;
+  color: #755820;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: clamp(2.8rem, 9vw, 5rem);
+  line-height: 1;
+  font-weight: 600;
+  color: #3f3221;
+  margin: 12px 0 22px;
+}
+
+.gold-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 15px auto 20px;
+  color: #b28b43;
+}
+
+.gold-line::before,
+.gold-line::after {
+  content: "";
+  height: 1px;
+  width: 65px;
+  background: #c9aa6b;
+}
+
+.gold-line span {
+  font-size: 9px;
+}
+
+.intro {
+  max-width: 650px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #665943;
+}
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+  width: min(100%, 1050px);
+  margin: 0 auto;
+  padding: 15px 35px 35px;
+}
+
+/* =========================
+   PEOPLE
+========================= */
+
+.person {
+  text-align: center;
+}
+
+.person-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: #aa843e;
+  margin-bottom: 7px;
+  font-weight: 600;
+}
+
+.person h3 {
+  font-size: clamp(2.3rem, 5vw, 3.5rem);
+  line-height: 1;
+  font-weight: 600;
+  color: #59431f;
+}
+
+.family {
+  margin-top: 10px;
+  font-size: 17px;
+  line-height: 1.5;
+  color: #76664d;
+}
+
+/* =========================
+   RING
+========================= */
+
+.ring-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+  gap: 15px;
+}
+
+.ring-divider::before,
+.ring-divider::after {
+  content: "";
+  width: 80px;
+  height: 1px;
+  background: #d1b77e;
+}
+
+.ring-divider span {
+  font-size: 28px;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 40px;
+}
+
+.detail-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ddc99e;
+  border-radius: 16px;
+  padding: 24px 18px;
+  text-align: center;
+  min-height: 175px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 8px 25px rgba(93, 69, 29, 0.06);
+}
+
+.detail-icon {
+  color: #a47c32;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.detail-title {
+  font-family: "Montserrat", sans-serif;
+  color: #927039;
+  font-size: 9px;
+  letter-spacing: 2.5px;
+  font-weight: 600;
+  margin-bottom: 9px;
+}
+
+.detail-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4c3a21;
+  line-height: 1.3;
+}
+
+.location {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  color: #82735b;
+  margin-top: 4px;
+}
+
+.location-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 13px;
+  padding: 9px 15px;
+  border-radius: 50px;
+  background: #8c692d;
+  color: white;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+}
+
+.location-button:hover {
+  background: #6f511f;
+  transform: translateY(-1px);
+}
+
+.location-button span {
+  font-size: 13px;
+}
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+  text-align: center;
+  max-width: 700px;
+  margin: 38px auto 0;
+}
+
+.message p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #6c5b42;
+  padding: 15px 0;
+}
+
+.message-line {
+  width: 50px;
+  height: 1px;
+  background: #c5a461;
+  margin: auto;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  text-align: center;
+  padding: 20px 20px 45px;
+}
+
+.quote {
+  font-size: 19px;
+  line-height: 1.5;
+  font-style: italic;
+  color: #6c542d;
+}
+
+.footer-divider {
+  margin: 15px 0;
+  color: #b18a42;
+}
+
+.footer-divider::before,
+.footer-divider::after {
+  content: "——";
+  margin: 0 10px;
+  color: #cbb27c;
+}
+
+.footer-divider span {
+  font-size: 9px;
+}
+
+.regards {
+  font-family: "Montserrat", sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+  color: #9a7940;
+  margin-bottom: 5px;
+}
+
+.family-name {
+  font-size: 21px;
+  font-weight: 600;
+  color: #59431f;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+  .hero {
+    padding-top: 45px;
+  }
+
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .details {
+    grid-template-columns: 1fr;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .detail-card {
+    min-height: auto;
+    padding: 20px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  body {
+    background: #f7f0e2;
+  }
+
+  .invitation {
+    min-height: 100vh;
+  }
+
+  /* Remove unnecessary outer space */
+  .hero {
+    padding: 25px 18px 20px;
+  }
+
+  .hero-decoration {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .small-title {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+    margin-bottom: 13px;
+  }
+
+  .hero h1 {
+    font-size: 3.1rem;
+  }
+
+  .hero h2 {
+    font-size: 2.8rem;
+    margin: 8px 0 15px;
+  }
+
+  .gold-line {
+    margin: 10px auto 15px;
+  }
+
+  .gold-line::before,
+  .gold-line::after {
+    width: 45px;
+  }
+
+  .intro {
+    font-size: 15px;
+    line-height: 1.45;
+    max-width: 340px;
+  }
+
+  .content {
+    padding: 5px 16px 20px;
+  }
+
+  .person-label {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+  }
+
+  .person h3 {
+    font-size: 2.35rem;
+  }
+
+  .family {
+    font-size: 15px;
+    line-height: 1.4;
+    margin-top: 7px;
+  }
+
+  .ring-divider {
+    margin: 13px 0;
+  }
+
+  .ring-divider::before,
+  .ring-divider::after {
+    width: 55px;
+  }
+
+  .ring-divider span {
+    font-size: 24px;
+  }
+
+  .details {
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .detail-card {
+    min-height: 0;
+    padding: 17px 12px;
+    border-radius: 13px;
+  }
+
+  .detail-icon {
+    margin-bottom: 6px;
+  }
+
+  .detail-title {
+    font-size: 8px;
+    margin-bottom: 5px;
+  }
+
+  .detail-value {
+    font-size: 18px;
+  }
+
+  .location {
+    font-size: 10px;
+  }
+
+  .location-button {
+    margin-top: 10px;
+    padding: 8px 14px;
+  }
+
+  .message {
+    margin-top: 25px;
+  }
+
+  .message p {
+    font-size: 15px;
+    line-height: 1.45;
+    padding: 12px 5px;
+  }
+
+  .footer {
+    padding: 5px 15px 25px;
+  }
+
+  .quote {
+    font-size: 16px;
+  }
+
+  .family-name {
+    font-size: 19px;
+  }
+}
+
+/* =========================
+   VERY SMALL PHONES
+========================= */
+
+@media (max-width: 380px) {
+
+  .hero {
+    padding-top: 20px;
+  }
+
+  .hero h1 {
+    font-size: 2.7rem;
+  }
+
+  .hero h2 {
+    font-size: 2.4rem;
+  }
+
+  .intro {
+    font-size: 14px;
+  }
+
+  .person h3 {
+    font-size: 2.1rem;
+  }
+
+  .family {
+    font-size: 14px;
+  }
+
+  .detail-value {
+    font-size: 17px;
+  }
+}

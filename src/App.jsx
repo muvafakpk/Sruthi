@@ -87,7 +87,7 @@ function App() {
 
           <div className="photo-inner">
             <img
-              src="/Akhil.PNG"
+              src="/Akhil.webp"
               alt="Akhil and Shamini"
             />
           </div>

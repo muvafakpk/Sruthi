@@ -2,8 +2,12 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
-  const targetDate = new Date("2026-10-01T10:30:00+05:30").getTime();
+  // Engagement date and time
+  const targetDate = new Date(
+    "2026-10-01T10:30:00+05:30"
+  ).getTime();
 
+  // Calculate countdown
   const calculateTime = () => {
     const now = new Date().getTime();
     const difference = targetDate - now;
@@ -18,21 +22,29 @@ function App() {
     }
 
     return {
-      days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      days: Math.floor(
+        difference / (1000 * 60 * 60 * 24)
+      ),
+
       hours: Math.floor(
         (difference / (1000 * 60 * 60)) % 24
       ),
+
       minutes: Math.floor(
         (difference / (1000 * 60)) % 60
       ),
+
       seconds: Math.floor(
         (difference / 1000) % 60
       ),
     };
   };
 
-  const [timeLeft, setTimeLeft] = useState(calculateTime());
+  const [timeLeft, setTimeLeft] = useState(
+    calculateTime()
+  );
 
+  // Update countdown every second
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTime());
@@ -49,17 +61,28 @@ function App() {
       <div className="decor decor-two">✧</div>
       <div className="decor decor-three">✦</div>
 
-      {/* HERO */}
+
+      {/* =========================
+          HERO
+      ========================== */}
+
       <section className="hero">
 
-        <div className="top-symbol">✦</div>
+        <div className="top-symbol">
+          ✦
+        </div>
 
         <p className="eyebrow">
           TOGETHER WITH THEIR FAMILIES
         </p>
 
-        <h1>Engagement</h1>
-        <h2>Ceremony</h2>
+        <h1>
+          Engagement
+        </h1>
+
+        <h2>
+          Ceremony
+        </h2>
 
         <div className="ornament">
           <span></span>
@@ -68,15 +91,18 @@ function App() {
         </div>
 
         <p className="hero-text">
-          With the blessings of the Almighty and the loving memories
-          of our elders, we cordially invite you to celebrate the
-          engagement of
+          With the blessings of the Almighty and the
+          loving memories of our elders, we cordially
+          invite you to celebrate the engagement of
         </p>
 
       </section>
 
 
-      {/* COUPLE PHOTO */}
+      {/* =========================
+          COUPLE PHOTO
+      ========================== */}
+
       <section className="couple-section">
 
         <div className="photo-decoration photo-left">
@@ -86,15 +112,20 @@ function App() {
         <div className="photo-frame">
 
           <div className="photo-inner">
+
             <img
               src="/Akhil.webp"
               alt="Akhil and Shamini"
             />
+
           </div>
 
           <div className="photo-corner top-left"></div>
+
           <div className="photo-corner top-right"></div>
+
           <div className="photo-corner bottom-left"></div>
+
           <div className="photo-corner bottom-right"></div>
 
         </div>
@@ -106,51 +137,88 @@ function App() {
       </section>
 
 
-      {/* COUPLE NAMES */}
+      {/* =========================
+          COUPLE NAMES
+      ========================== */}
+
       <section className="couple-names">
 
-        <div className="person">
-          <p className="label">GROOM</p>
+        {/* Groom */}
 
-          <h3>Akhil K</h3>
+        <div className="person">
+
+          <p className="label">
+            GROOM
+          </p>
+
+          <h3>
+            Akhil K
+          </h3>
 
           <p>
             S/o Late K. Prabhakaran &amp; Kamalakshi
             <br />
             Kunnumal, Kottikulam
           </p>
+
         </div>
+
+
+        {/* & */}
 
         <div className="ampersand">
-          <span>&amp;</span>
+          <span>
+            &amp;
+          </span>
         </div>
 
-        <div className="person">
-          <p className="label">BRIDE</p>
 
-          <h3>Shamini K</h3>
+        {/* Bride */}
+
+        <div className="person">
+
+          <p className="label">
+            BRIDE
+          </p>
+
+          <h3>
+            Shamini K
+          </h3>
 
           <p>
             D/o Late Raghavan &amp; Yashoda
           </p>
+
         </div>
 
       </section>
 
 
-      {/* DATE */}
+      {/* =========================
+          DATE
+      ========================== */}
+
       <section className="event-date">
 
-        <p className="label">SAVE THE DATE</p>
+        <p className="label">
+          SAVE THE DATE
+        </p>
 
-        <h3>01 • 10 • 2026</h3>
+        <h3>
+          01 • 10 • 2026
+        </h3>
 
-        <p>Thursday</p>
+        <p>
+          Thursday
+        </p>
 
       </section>
 
 
-      {/* COUNTDOWN */}
+      {/* =========================
+          COUNTDOWN
+      ========================== */}
+
       <section className="countdown-section">
 
         <p className="countdown-title">
@@ -159,34 +227,90 @@ function App() {
 
         <div className="countdown">
 
-          <div className="count-box">
-            <strong>{String(timeLeft.days).padStart(2, "0")}</strong>
-            <span>DAYS</span>
-          </div>
-
-          <div className="separator">:</div>
+          {/* Days */}
 
           <div className="count-box">
-            <strong>{String(timeLeft.hours).padStart(2, "0")}</strong>
-            <span>HOURS</span>
-          </div>
 
-          <div className="separator">:</div>
-
-          <div className="count-box">
             <strong>
-              {String(timeLeft.minutes).padStart(2, "0")}
+              {String(timeLeft.days).padStart(
+                2,
+                "0"
+              )}
             </strong>
-            <span>MINUTES</span>
+
+            <span>
+              DAYS
+            </span>
+
           </div>
 
-          <div className="separator">:</div>
+
+          <div className="separator">
+            :
+          </div>
+
+
+          {/* Hours */}
 
           <div className="count-box">
+
             <strong>
-              {String(timeLeft.seconds).padStart(2, "0")}
+              {String(timeLeft.hours).padStart(
+                2,
+                "0"
+              )}
             </strong>
-            <span>SECONDS</span>
+
+            <span>
+              HOURS
+            </span>
+
+          </div>
+
+
+          <div className="separator">
+            :
+          </div>
+
+
+          {/* Minutes */}
+
+          <div className="count-box">
+
+            <strong>
+              {String(timeLeft.minutes).padStart(
+                2,
+                "0"
+              )}
+            </strong>
+
+            <span>
+              MINUTES
+            </span>
+
+          </div>
+
+
+          <div className="separator">
+            :
+          </div>
+
+
+          {/* Seconds */}
+
+          <div className="count-box">
+
+            <strong>
+              {String(timeLeft.seconds).padStart(
+                2,
+                "0"
+              )}
+            </strong>
+
+            <span>
+              SECONDS
+            </span>
+
           </div>
 
         </div>
@@ -194,8 +318,14 @@ function App() {
       </section>
 
 
-      {/* DETAILS */}
+      {/* =========================
+          EVENT DETAILS
+      ========================== */}
+
       <section className="details">
+
+
+        {/* Muhurtham */}
 
         <div className="detail">
 
@@ -213,6 +343,8 @@ function App() {
 
         </div>
 
+
+        {/* Venue */}
 
         <div className="detail">
 
@@ -245,7 +377,10 @@ function App() {
       </section>
 
 
-      {/* MESSAGE */}
+      {/* =========================
+          MESSAGE
+      ========================== */}
+
       <section className="message">
 
         <div className="small-ornament">
@@ -253,9 +388,10 @@ function App() {
         </div>
 
         <p>
-          Your presence and blessings will make this joyful occasion
-          even more memorable as our families come together to celebrate
-          the beginning of a beautiful journey.
+          Your presence and blessings will make this
+          joyful occasion even more memorable as our
+          families come together to celebrate the
+          beginning of a beautiful journey.
         </p>
 
         <div className="small-ornament">
@@ -265,7 +401,10 @@ function App() {
       </section>
 
 
-      {/* FOOTER */}
+      {/* =========================
+          FOOTER
+      ========================== */}
+
       <footer>
 
         <p className="quote">
@@ -275,9 +414,15 @@ function App() {
         </p>
 
         <div className="footer-line">
+
           <span></span>
-          <b>✦</b>
+
+          <b>
+            ✦
+          </b>
+
           <span></span>
+
         </div>
 
         <p className="warm">

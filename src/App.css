@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap");
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -12,523 +10,1004 @@ html {
 
 body {
   margin: 0;
-  min-width: 320px;
-  background: #eee4cf;
-  color: #493b27;
+  padding: 0;
+  background: #eee5d3;
+  color: #463720;
   font-family: "Cormorant Garamond", Georgia, serif;
 }
 
-/* =========================
-   MAIN INVITATION
-========================= */
+#root {
+  width: 100%;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
 
 .invitation {
   width: 100%;
   min-height: 100vh;
+  position: relative;
   overflow: hidden;
+
   background:
     radial-gradient(
-      circle at top,
-      rgba(255, 255, 255, 0.95),
-      transparent 45%
-    ),
-    linear-gradient(
-      145deg,
-      #f8f2e5 0%,
-      #fffaf0 45%,
-      #eee2c9 100%
+      circle at 50% 0%,
+      #fffdf7 0%,
+      #faf4e8 35%,
+      #eee3ce 100%
     );
 }
 
-/* =========================
+
+/* =========================================
+   BACKGROUND DECORATION
+========================================= */
+
+.decor {
+  position: absolute;
+  color: rgba(177, 139, 66, 0.35);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decor-one {
+  top: 8%;
+  left: 5%;
+  font-size: 20px;
+}
+
+.decor-two {
+  top: 20%;
+  right: 5%;
+  font-size: 25px;
+}
+
+.decor-three {
+  top: 48%;
+  left: 3%;
+  font-size: 16px;
+}
+
+
+/* =========================================
    HERO
-========================= */
+========================================= */
 
 .hero {
-  text-align: center;
-  padding: 55px 25px 35px;
   position: relative;
+  z-index: 1;
+
+  text-align: center;
+
+  padding:
+    45px
+    20px
+    20px;
 }
 
-.hero-decoration {
-  color: #b18a42;
+.top-symbol {
+  color: #b08a43;
   font-size: 18px;
-  margin-bottom: 18px;
+  margin-bottom: 13px;
 }
 
-.small-title {
+.eyebrow {
+  margin: 0 0 15px;
+
   font-family: "Montserrat", sans-serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: #92723a;
+
+  font-size: 9px;
   font-weight: 600;
-  margin-bottom: 18px;
+
+  letter-spacing: 4px;
+
+  color: #98783f;
 }
 
 .hero h1 {
-  font-size: clamp(3.2rem, 10vw, 5.8rem);
-  line-height: 0.8;
-  font-weight: 500;
-  font-style: italic;
-  color: #755820;
   margin: 0;
+
+  color: #73551e;
+
+  font-size: clamp(3.3rem, 9vw, 6rem);
+
+  line-height: 0.78;
+
+  font-weight: 500;
+
+  font-style: italic;
 }
 
 .hero h2 {
-  font-size: clamp(2.8rem, 9vw, 5rem);
-  line-height: 1;
+  margin: 13px 0 20px;
+
+  color: #3f311e;
+
+  font-size: clamp(3rem, 8vw, 5.2rem);
+
+  line-height: 0.9;
+
   font-weight: 600;
-  color: #3f3221;
-  margin: 12px 0 22px;
 }
 
-.gold-line {
+.ornament {
   display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  margin: 15px 0 18px;
+}
+
+.ornament span {
+  width: 65px;
+  height: 1px;
+
+  background: #c8a968;
+}
+
+.ornament b {
+  color: #b08a43;
+  font-size: 8px;
+}
+
+.hero-text {
+  max-width: 650px;
+
+  margin: 0 auto;
+
+  color: #75664e;
+
+  font-size: 18px;
+
+  line-height: 1.55;
+}
+
+
+/* =========================================
+   PHOTO SECTION
+========================================= */
+
+.couple-section {
+  position: relative;
+
+  display: flex;
+
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  margin: 15px auto 20px;
-  color: #b28b43;
+
+  padding: 5px 20px 25px;
+
+  z-index: 2;
 }
 
-.gold-line::before,
-.gold-line::after {
-  content: "";
-  height: 1px;
-  width: 65px;
-  background: #c9aa6b;
+.photo-frame {
+  position: relative;
+
+  width: min(390px, 72vw);
+
+  padding: 8px;
+
+  background: #fffdf8;
+
+  border: 1px solid #c9a968;
+
+  box-shadow:
+    0 15px 45px rgba(76, 56, 25, 0.16),
+    0 3px 8px rgba(76, 56, 25, 0.08);
 }
 
-.gold-line span {
-  font-size: 9px;
+
+/*
+  The photo itself is tall and elegant.
+*/
+
+.photo-inner {
+  width: 100%;
+
+  overflow: hidden;
+
+  aspect-ratio: 3 / 4;
+
+  background: #eee1c8;
 }
 
-.intro {
-  max-width: 650px;
-  margin: auto;
-  font-size: 18px;
-  line-height: 1.6;
-  color: #665943;
+.photo-inner img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition: transform 0.7s ease;
 }
 
-/* =========================
-   CONTENT
-========================= */
-
-.content {
-  width: min(100%, 1050px);
-  margin: 0 auto;
-  padding: 15px 35px 35px;
+.photo-frame:hover img {
+  transform: scale(1.025);
 }
 
-/* =========================
-   PEOPLE
-========================= */
+
+/* =========================================
+   PHOTO CORNERS
+========================================= */
+
+.photo-corner {
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  border-color: #b28b45;
+  border-style: solid;
+}
+
+.top-left {
+  top: -5px;
+  left: -5px;
+
+  border-width: 2px 0 0 2px;
+}
+
+.top-right {
+  top: -5px;
+  right: -5px;
+
+  border-width: 2px 2px 0 0;
+}
+
+.bottom-left {
+  bottom: -5px;
+  left: -5px;
+
+  border-width: 0 0 2px 2px;
+}
+
+.bottom-right {
+  bottom: -5px;
+  right: -5px;
+
+  border-width: 0 2px 2px 0;
+}
+
+
+/* =========================================
+   PHOTO SIDE DECOR
+========================================= */
+
+.photo-decoration {
+  color: #b18a43;
+
+  font-size: 20px;
+
+  position: absolute;
+}
+
+.photo-left {
+  left: calc(50% - 230px);
+  top: 25%;
+}
+
+.photo-right {
+  right: calc(50% - 230px);
+  bottom: 25%;
+}
+
+
+/* =========================================
+   COUPLE NAMES
+========================================= */
+
+.couple-names {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 45px;
+
+  text-align: center;
+
+  padding: 20px 20px 10px;
+}
 
 .person {
-  text-align: center;
+  min-width: 220px;
 }
 
-.person-label {
+.label {
+  margin: 0 0 7px;
+
   font-family: "Montserrat", sans-serif;
-  font-size: 9px;
-  letter-spacing: 3px;
-  color: #aa843e;
-  margin-bottom: 7px;
+
+  font-size: 8px;
+
   font-weight: 600;
+
+  letter-spacing: 3px;
+
+  color: #a07d3e;
 }
 
 .person h3 {
-  font-size: clamp(2.3rem, 5vw, 3.5rem);
-  line-height: 1;
-  font-weight: 600;
+  margin: 0;
+
   color: #59431f;
+
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+
+  line-height: 1;
+
+  font-weight: 600;
 }
 
-.family {
-  margin-top: 10px;
-  font-size: 17px;
-  line-height: 1.5;
+.person p:last-child {
+  margin: 10px 0 0;
+
   color: #76664d;
+
+  font-size: 15px;
+
+  line-height: 1.4;
 }
 
-/* =========================
-   RING
-========================= */
-
-.ring-divider {
+.ampersand {
   display: flex;
-  justify-content: center;
+
   align-items: center;
-  margin: 20px 0;
-  gap: 15px;
+  justify-content: center;
+
+  width: 45px;
+  height: 45px;
+
+  border: 1px solid #c8a96b;
+
+  border-radius: 50%;
+
+  color: #98712e;
+
+  font-size: 22px;
+
+  font-style: italic;
 }
 
-.ring-divider::before,
-.ring-divider::after {
-  content: "";
-  width: 80px;
-  height: 1px;
-  background: #d1b77e;
-}
 
-.ring-divider span {
-  font-size: 28px;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.12));
-}
+/* =========================================
+   EVENT DATE
+========================================= */
 
-/* =========================
-   DETAILS
-========================= */
-
-.details {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-  margin-top: 40px;
-}
-
-.detail-card {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid #ddc99e;
-  border-radius: 16px;
-  padding: 24px 18px;
+.event-date {
   text-align: center;
-  min-height: 175px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 8px 25px rgba(93, 69, 29, 0.06);
+
+  padding: 30px 20px 15px;
 }
 
-.detail-icon {
-  color: #a47c32;
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  letter-spacing: 1px;
+.event-date .label {
   margin-bottom: 10px;
 }
 
-.detail-title {
-  font-family: "Montserrat", sans-serif;
-  color: #927039;
-  font-size: 9px;
-  letter-spacing: 2.5px;
+.event-date h3 {
+  margin: 0;
+
+  color: #745620;
+
+  font-size: clamp(2rem, 5vw, 3rem);
+
+  letter-spacing: 5px;
+
   font-weight: 600;
-  margin-bottom: 9px;
 }
 
-.detail-value {
+.event-date p:last-child {
+  margin: 7px 0 0;
+
+  color: #817054;
+
+  font-size: 15px;
+
+  font-family: "Montserrat", sans-serif;
+
+  letter-spacing: 1px;
+}
+
+
+/* =========================================
+   COUNTDOWN
+========================================= */
+
+.countdown-section {
+  width: min(650px, calc(100% - 30px));
+
+  margin: 15px auto 35px;
+
+  padding: 22px 18px;
+
+  border-top: 1px solid #d9c499;
+  border-bottom: 1px solid #d9c499;
+
+  text-align: center;
+}
+
+.countdown-title {
+  margin: 0 0 17px;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #98783f;
+}
+
+.countdown {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.count-box {
+  min-width: 75px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.count-box strong {
+  color: #4d3a20;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 25px;
+
+  font-weight: 500;
+
+  line-height: 1;
+}
+
+.count-box span {
+  margin-top: 7px;
+
+  color: #a08350;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 7px;
+
+  letter-spacing: 1.5px;
+}
+
+.separator {
+  color: #b38c49;
+
+  font-family: "Montserrat", sans-serif;
+
   font-size: 20px;
+
+  margin-top: -12px;
+}
+
+
+/* =========================================
+   DETAILS
+========================================= */
+
+.details {
+  width: min(750px, calc(100% - 30px));
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+}
+
+.detail {
+  padding: 24px 18px;
+
+  text-align: center;
+
+  background: rgba(255, 255, 255, 0.58);
+
+  border: 1px solid #ddc99e;
+
+  border-radius: 14px;
+
+  box-shadow: 0 8px 25px rgba(80, 60, 30, 0.05);
+}
+
+.detail-icon {
+  color: #a17c3b;
+
+  font-size: 18px;
+
+  margin-bottom: 7px;
+}
+
+.detail-label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #9a783e;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 8px;
+
   font-weight: 600;
-  color: #4c3a21;
+
+  letter-spacing: 2.5px;
+}
+
+.detail strong {
+  display: block;
+
+  color: #4f3b21;
+
+  font-size: 20px;
+
   line-height: 1.3;
 }
 
-.location {
-  font-family: "Montserrat", sans-serif;
-  font-size: 11px;
-  color: #82735b;
+.detail small {
+  display: block;
+
   margin-top: 4px;
-}
 
-.location-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 13px;
-  padding: 9px 15px;
-  border-radius: 50px;
-  background: #8c692d;
-  color: white;
-  text-decoration: none;
+  color: #7d6c51;
+
   font-family: "Montserrat", sans-serif;
+
   font-size: 10px;
-  letter-spacing: 0.3px;
-  transition: all 0.25s ease;
 }
 
-.location-button:hover {
-  background: #6f511f;
-  transform: translateY(-1px);
+.detail a {
+  display: inline-block;
+
+  margin-top: 13px;
+
+  padding: 9px 17px;
+
+  border-radius: 30px;
+
+  background: #8b682d;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 9px;
+
+  transition: 0.25s ease;
 }
 
-.location-button span {
-  font-size: 13px;
+.detail a:hover {
+  background: #6e511f;
+
+  transform: translateY(-2px);
 }
 
-/* =========================
+
+/* =========================================
    MESSAGE
-========================= */
+========================================= */
 
 .message {
+  width: min(680px, calc(100% - 35px));
+
+  margin: 35px auto 20px;
+
   text-align: center;
-  max-width: 700px;
-  margin: 38px auto 0;
+}
+
+.small-ornament {
+  color: #b08a43;
+
+  font-size: 10px;
 }
 
 .message p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #6c5b42;
-  padding: 15px 0;
+  margin: 12px 0;
+
+  color: #6d5d45;
+
+  font-size: 17px;
+
+  line-height: 1.55;
 }
 
-.message-line {
-  width: 50px;
-  height: 1px;
-  background: #c5a461;
-  margin: auto;
-}
 
-/* =========================
+/* =========================================
    FOOTER
-========================= */
+========================================= */
 
-.footer {
+footer {
   text-align: center;
-  padding: 20px 20px 45px;
+
+  padding: 15px 20px 40px;
 }
 
 .quote {
-  font-size: 19px;
+  margin: 0;
+
+  color: #70552d;
+
+  font-size: 18px;
+
   line-height: 1.5;
+
   font-style: italic;
-  color: #6c542d;
 }
 
-.footer-divider {
-  margin: 15px 0;
-  color: #b18a42;
+.footer-line {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 16px 0;
 }
 
-.footer-divider::before,
-.footer-divider::after {
-  content: "——";
-  margin: 0 10px;
-  color: #cbb27c;
+.footer-line span {
+  width: 45px;
+
+  height: 1px;
+
+  background: #c8aa70;
 }
 
-.footer-divider span {
-  font-size: 9px;
-}
+.footer-line b {
+  color: #ad8540;
 
-.regards {
-  font-family: "Montserrat", sans-serif;
   font-size: 8px;
+}
+
+.warm {
+  margin: 0 0 5px;
+
+  color: #9b793f;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 8px;
+
   letter-spacing: 3px;
-  color: #9a7940;
-  margin-bottom: 5px;
 }
 
-.family-name {
-  font-size: 21px;
-  font-weight: 600;
+footer h4 {
+  margin: 0;
+
   color: #59431f;
+
+  font-size: 21px;
+
+  font-weight: 600;
 }
 
-/* =========================
+
+/* =========================================
    TABLET
-========================= */
+========================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 750px) {
 
-  .hero {
-    padding-top: 45px;
+  .couple-names {
+    gap: 20px;
   }
 
-  .content {
-    padding-left: 25px;
-    padding-right: 25px;
+  .person {
+    min-width: 180px;
   }
 
-  .details {
-    grid-template-columns: 1fr;
-    max-width: 550px;
-    margin-left: auto;
-    margin-right: auto;
+  .photo-left {
+    left: 8%;
   }
 
-  .detail-card {
-    min-height: auto;
-    padding: 20px;
+  .photo-right {
+    right: 8%;
   }
 }
 
-/* =========================
+
+/* =========================================
    MOBILE
-========================= */
+========================================= */
 
 @media (max-width: 600px) {
 
-  body {
-    background: #f7f0e2;
-  }
-
-  .invitation {
-    min-height: 100vh;
-  }
-
-  /* Remove unnecessary outer space */
   .hero {
-    padding: 25px 18px 20px;
+    padding:
+      25px
+      16px
+      12px;
   }
 
-  .hero-decoration {
-    font-size: 14px;
-    margin-bottom: 10px;
+  .top-symbol {
+    margin-bottom: 9px;
   }
 
-  .small-title {
-    font-size: 8px;
+  .eyebrow {
+    font-size: 7px;
+
     letter-spacing: 2.5px;
-    margin-bottom: 13px;
+
+    margin-bottom: 12px;
   }
 
   .hero h1 {
-    font-size: 3.1rem;
+    font-size: 3rem;
   }
 
   .hero h2 {
-    font-size: 2.8rem;
-    margin: 8px 0 15px;
+    font-size: 2.65rem;
+
+    margin:
+      9px
+      0
+      14px;
   }
 
-  .gold-line {
-    margin: 10px auto 15px;
+  .ornament {
+    margin: 10px 0 13px;
   }
 
-  .gold-line::before,
-  .gold-line::after {
-    width: 45px;
+  .ornament span {
+    width: 42px;
   }
 
-  .intro {
-    font-size: 15px;
+  .hero-text {
+    font-size: 14px;
+
     line-height: 1.45;
+
     max-width: 340px;
   }
 
-  .content {
-    padding: 5px 16px 20px;
+
+  /* PHOTO */
+
+  .couple-section {
+    padding:
+      5px
+      20px
+      20px;
   }
 
-  .person-label {
-    font-size: 8px;
-    letter-spacing: 2.5px;
+  .photo-frame {
+    width: min(330px, 78vw);
+
+    padding: 6px;
+  }
+
+  .photo-decoration {
+    font-size: 14px;
+  }
+
+  .photo-left {
+    left: 7%;
+  }
+
+  .photo-right {
+    right: 7%;
+  }
+
+
+  /* NAMES */
+
+  .couple-names {
+    flex-direction: column;
+
+    gap: 5px;
+
+    padding:
+      10px
+      15px
+      5px;
+  }
+
+  .person {
+    min-width: 0;
+
+    width: 100%;
   }
 
   .person h3 {
     font-size: 2.35rem;
   }
 
-  .family {
-    font-size: 15px;
-    line-height: 1.4;
-    margin-top: 7px;
+  .person p:last-child {
+    font-size: 13px;
+
+    margin-top: 6px;
   }
 
-  .ring-divider {
-    margin: 13px 0;
+  .ampersand {
+    width: 32px;
+    height: 32px;
+
+    font-size: 17px;
+
+    margin: 4px 0;
   }
 
-  .ring-divider::before,
-  .ring-divider::after {
-    width: 55px;
+
+  /* DATE */
+
+  .event-date {
+    padding:
+      22px
+      15px
+      12px;
   }
 
-  .ring-divider span {
-    font-size: 24px;
+  .event-date h3 {
+    font-size: 1.85rem;
+
+    letter-spacing: 3px;
   }
+
+
+  /* COUNTDOWN */
+
+  .countdown-section {
+    width: calc(100% - 28px);
+
+    padding:
+      17px
+      8px;
+
+    margin:
+      10px auto
+      25px;
+  }
+
+  .countdown-title {
+    font-size: 7px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+  }
+
+  .countdown {
+    gap: 3px;
+  }
+
+  .count-box {
+    min-width: 62px;
+  }
+
+  .count-box strong {
+    font-size: 21px;
+  }
+
+  .count-box span {
+    font-size: 6px;
+
+    letter-spacing: 1px;
+  }
+
+  .separator {
+    font-size: 16px;
+  }
+
+
+  /* DETAILS */
 
   .details {
+    width: calc(100% - 28px);
+
+    grid-template-columns: 1fr;
+
     gap: 10px;
-    margin-top: 25px;
   }
 
-  .detail-card {
-    min-height: 0;
-    padding: 17px 12px;
-    border-radius: 13px;
+  .detail {
+    padding:
+      18px
+      14px;
   }
 
-  .detail-icon {
-    margin-bottom: 6px;
-  }
-
-  .detail-title {
-    font-size: 8px;
-    margin-bottom: 5px;
-  }
-
-  .detail-value {
+  .detail strong {
     font-size: 18px;
   }
 
-  .location {
-    font-size: 10px;
-  }
 
-  .location-button {
-    margin-top: 10px;
-    padding: 8px 14px;
-  }
+  /* MESSAGE */
 
   .message {
+    width: calc(100% - 35px);
+
     margin-top: 25px;
   }
 
   .message p {
-    font-size: 15px;
+    font-size: 14px;
+
     line-height: 1.45;
-    padding: 12px 5px;
   }
 
-  .footer {
-    padding: 5px 15px 25px;
+
+  /* FOOTER */
+
+  footer {
+    padding:
+      8px
+      15px
+      28px;
   }
 
   .quote {
-    font-size: 16px;
+    font-size: 15px;
   }
 
-  .family-name {
+  footer h4 {
     font-size: 19px;
   }
 }
 
-/* =========================
-   VERY SMALL PHONES
-========================= */
+
+/* =========================================
+   VERY SMALL MOBILE
+========================================= */
 
 @media (max-width: 380px) {
 
   .hero {
-    padding-top: 20px;
+    padding-top: 18px;
   }
 
   .hero h1 {
-    font-size: 2.7rem;
+    font-size: 2.65rem;
   }
 
   .hero h2 {
-    font-size: 2.4rem;
+    font-size: 2.35rem;
   }
 
-  .intro {
-    font-size: 14px;
+  .photo-frame {
+    width: 75vw;
   }
 
   .person h3 {
     font-size: 2.1rem;
   }
 
-  .family {
-    font-size: 14px;
+  .count-box {
+    min-width: 55px;
   }
 
-  .detail-value {
-    font-size: 17px;
+  .count-box strong {
+    font-size: 18px;
+  }
+
+  .count-box span {
+    font-size: 5.5px;
+  }
+
+  .separator {
+    font-size: 14px;
   }
 }
